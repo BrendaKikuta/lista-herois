@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
+import { HeroesModule } from '../heroes/heroes.module';
 import { HomeComponent } from './home/home.component';
 
 
@@ -18,7 +19,8 @@ import { HomeComponent } from './home/home.component';
     HomeComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    HeroesModule
   ],
   providers: [],
   bootstrap: []
