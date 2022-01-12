@@ -1,0 +1,29 @@
+@import './colors';
+@import './mixins';
+@import './variables';
+
+
+.container {
+    max-width: 1140px;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+
+    @media (min-width: $screen-lg-size) {
+        width: 960px;
+    }
+
+    @media (min-width: $screen-md-size) {
+        width: 720px;
+    }
+
+    @media (min-width: $screen-sm-size) {
+        width: 540px;
+    }
+}
+
+.text-center {
+    text-align: center;
+}
