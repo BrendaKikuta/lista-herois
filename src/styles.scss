@@ -1,1 +1,11 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import './app/shared/scss/globals';
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Bebas Neue', cursive;
+    color: $shark;
+    margin: 0px;
+}
