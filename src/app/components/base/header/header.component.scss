@@ -5,15 +5,11 @@ header {
     height: 60px;
     padding: 20px 42px;
     margin-bottom: 34px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+    @include flex('row');
     justify-content: space-between;
 
     .header-content {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
+        @include flex('row');
         justify-content: center;
 
         h1 {
