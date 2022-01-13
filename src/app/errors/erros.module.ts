@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
+import { BaseModule } from '../components/base/base.module';
 
 import { NotFoundComponent } from './not-found/not-found.component';
 
@@ -12,6 +13,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
     NotFoundComponent,  
   ],
   imports: [
+    BaseModule,
     CommonModule
   ],
   providers: [],

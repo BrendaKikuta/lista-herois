@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-hero-card',
@@ -6,4 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./hero-card.component.scss']
 })
 export class HeroCardComponent {
+  @Input() hero:any = {};
+
+  heroThumbnail = '';
+
+  getThumbnail = (path: string) => {
+    return `${path}/standard_small.jpg`;
+  }
 }

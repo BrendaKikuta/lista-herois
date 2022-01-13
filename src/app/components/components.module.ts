@@ -1,5 +1,7 @@
 import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
+import { RouterModule } from '@angular/router';
 
 import { BaseModule } from './base/base.module';
 import { HeroesModule } from './heroes/heroes.module';
@@ -15,7 +17,9 @@ import { HeroesModule } from './heroes/heroes.module';
     HeroesModule  
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    HttpClientModule,
+    RouterModule
   ],
   providers: [],
   bootstrap: []

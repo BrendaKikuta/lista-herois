@@ -1,7 +1,9 @@
 <div class="list-heroes">
     <p class="input-container">
-        <input type="text" id="input-search-hero">
+        <input type="text" id="input-search-hero" (keyup)="filter = onKeyUp($event.target)">
         <label for="input-search-hero" unselectable="on">Buscar personagem</label>
     </p>
-    <app-hero-card></app-hero-card>
+    <div *ngFor="let hero of listOfHeroes">
+        <app-hero-card [hero]="hero | filterByName: filter"></app-hero-card>
+    </div>
 </div>

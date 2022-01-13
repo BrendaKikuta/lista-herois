@@ -1,5 +1,6 @@
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
+import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -14,6 +15,7 @@ import { ErrorsModule } from './errors/erros.module';
     AppRoutingModule,
     BrowserModule,
     BaseModule,
+    HttpClientModule,
     ErrorsModule,
   ],
   providers: [],

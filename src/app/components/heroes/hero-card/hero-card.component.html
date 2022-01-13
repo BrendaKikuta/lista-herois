@@ -6,22 +6,24 @@
     </div>
     <div class="hero-card-content">
         <div class="hero-card-content-info">
-            <img src="../../../../assets/images/footer.png" alt="">
-            <span>Homem aranha</span>
+            <img [src]="getThumbnail(hero.thumbnail.path)" alt="">
+            <span> {{ hero.name }} </span>
         </div>
         <div class="hero-card-content-series">
-            <ul>
-                <li>1</li>
-                <li>2</li>
-                <li>3</li>
+            <ul *ngIf="hero.series.items.length > 0">
+                <li *ngFor="let serie of hero.series.items.slice(0, 3)"> 
+                    {{ serie.name ? serie.name : 'Não informado' }}
+                </li>
             </ul>
+            <span *ngIf="hero.series.items.length <= 0"> Não informado </span>
         </div>
         <div class="hero-card-content-events">
-            <ul>
-                <li>1</li>
-                <li>2</li>
-                <li>3</li>
+            <ul *ngIf="hero.events.items.length > 0">
+                <li *ngFor="let event of hero.events.items.slice(0, 3)"> 
+                    {{ event.name }}
+                </li>
             </ul>
+            <span *ngIf="hero.events.items.length <= 0"> Não informado </span>
         </div>
     </div>
 </div>
