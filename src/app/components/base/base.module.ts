@@ -5,13 +5,15 @@ import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { HeroesModule } from '../heroes/heroes.module';
 import { HomeComponent } from './home/home.component';
+import { FilterByName } from '../heroes/filter-by-name.pipe';
 
 
 @NgModule({
   declarations: [
     FooterComponent,
     HeaderComponent,
-    HomeComponent
+    HomeComponent,
+    FilterByName
   ],
   exports: [
     FooterComponent,  

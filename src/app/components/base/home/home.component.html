@@ -1,5 +1,9 @@
 <app-header></app-header>
 <div class="home">
-    <app-list-heroes></app-list-heroes>
+    <p class="input-container">
+        <input type="text" id="input-search-hero" (keyup)="onKeyUp($event.target)">
+        <label for="input-search-hero" unselectable="on">Buscar personagem</label>
+    </p>
+    <app-list-heroes [listOfHeroes]="listOfHeroes  | filterByName: filter"></app-list-heroes>
 </div>
 <app-footer></app-footer>

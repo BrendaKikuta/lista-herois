@@ -1,9 +1,10 @@
-<div class="list-heroes">
-    <p class="input-container">
-        <input type="text" id="input-search-hero" (keyup)="filter = onKeyUp($event.target)">
-        <label for="input-search-hero" unselectable="on">Buscar personagem</label>
-    </p>
+<div *ngIf="listOfHeroes.length > 0" class="list-heroes">
     <div *ngFor="let hero of listOfHeroes">
-        <app-hero-card [hero]="hero | filterByName: filter"></app-hero-card>
+        <app-hero-card [hero]="hero"></app-hero-card>
     </div>
+</div>
+
+<div *ngIf="listOfHeroes.length <= 0" class="list-heroes-not-found text-center">
+    <h2>Nenhum personagem encontrado</h2>
+    <img src="../../../assets/images/groot.png" alt="Nenhum personagem encontrado">
 </div>

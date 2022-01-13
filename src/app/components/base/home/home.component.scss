@@ -1,3 +1,51 @@
+@import '../../../shared/scss/globals';
+
 .home {
     padding: 0px 42px 16px;
+
+    .input-container {
+        width: 100%; 
+        position: relative;
+
+        label {
+            color: $shark;
+            position: absolute; 
+            cursor: text;
+            transform: translateY(-25px);
+            transition: transform 0.3s ease;
+            left: 0;
+            bottom: 10px;
+        }
+
+        input {
+            margin-bottom: 34px;
+            font-family: 'Encode Sans Semi Condensed', sans-serif;
+            font-size: 12px;
+            width: 20%;
+            height: 40px;
+            transition: 0.6s;
+            border: none;
+            border-bottom: 1px solid $shark;
+            background-color: transparent;
+
+            &:focus {
+                outline: none;
+                border-bottom: 1px solid $crimson;
+
+                & + label {
+                    transform: translateY(-55px);
+                    color: $crimson;
+                    text-transform: uppercase;
+                }
+            }
+
+            &:placeholder-shown {
+                & + label {
+                    transform: translateY(-55px);
+                    color: $crimson;
+                    text-transform: uppercase;
+                }
+            }
+        }
+    }
 }
