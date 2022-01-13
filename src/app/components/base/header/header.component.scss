@@ -12,8 +12,11 @@ header {
         @include flex('row');
         justify-content: center;
 
-        h1 {
+        a {
             color: $white;
+            text-decoration: none;
+            font-size: 2em;
+            font-weight: 600;
         }
     }
 
