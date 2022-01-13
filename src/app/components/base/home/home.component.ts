@@ -1,36 +1,33 @@
-import { Component } from '@angular/core';
-
-import { HeroesService } from '../../heroes/heroes.service';
+import { ActivatedRoute } from '@angular/router';
+import { debounceTime } from 'rxjs/operators';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Subject } from 'rxjs';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit, OnDestroy {
 
   constructor(
-    private heroesService: HeroesService
+    private activatedRoute: ActivatedRoute
   ) {}
     
   listOfHeroes: [] = [];
   filter: string = '';
+  debounce: Subject<string> = new Subject<string>();
 
   ngOnInit(): void {
-    this.listHeroes();
+    const list = this.activatedRoute.snapshot.data['heroes'];
+    this.listOfHeroes = list.data.results;
+
+    this.debounce
+      .pipe(debounceTime(300))
+      .subscribe(filter => this.filter = filter);
   }
 
-  listHeroes = () => {
-    this.heroesService
-    .getHeroes().subscribe((list) => {
-      this.listOfHeroes = list.data.results;
-    })
-  }
-
-  onKeyUp(target: any = '') {
-    if(target instanceof EventTarget) {
-      var elemento = target as HTMLInputElement;
-      this.filter = elemento.value;
-    }
+  ngOnDestroy(): void {
+    this.debounce.unsubscribe();
   }
 }

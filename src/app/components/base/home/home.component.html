@@ -1,7 +1,7 @@
 <app-header></app-header>
 <div class="home">
     <p class="input-container">
-        <input type="text" id="input-search-hero" (keyup)="onKeyUp($event.target)">
+        <input #searchHeroes type="text" id="input-search-hero" (keyup)="debounce.next(searchHeroes.value)">
         <label for="input-search-hero" unselectable="on">Buscar personagem</label>
     </p>
     <app-list-heroes [listOfHeroes]="listOfHeroes  | filterByName: filter"></app-list-heroes>
