@@ -1,9 +1,12 @@
 <app-header></app-header>
 <div class="home">
     <p class="input-container">
-        <input #searchHeroes type="text" id="input-search-hero" (keyup)="debounce.next(searchHeroes.value)">
+        <input #searchHeroes type="text" [(ngModel)]="search" id="input-search-hero" (keyup)="debounce.next(searchHeroes.value)">
         <label for="input-search-hero" unselectable="on">Buscar personagem</label>
     </p>
     <app-list-heroes [listOfHeroes]="listOfHeroes  | filterByName: filter"></app-list-heroes>
 </div>
+
+<app-pagination *ngIf="!search" (click)="load()" [hasMore]="hasMore"></app-pagination>
+
 <app-footer></app-footer>

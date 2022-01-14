@@ -15,8 +15,8 @@ import { ErrorsModule } from './errors/erros.module';
     AppRoutingModule,
     BrowserModule,
     BaseModule,
-    HttpClientModule,
     ErrorsModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
