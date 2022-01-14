@@ -38,6 +38,10 @@
                     text-transform: uppercase;
                 }
             }
+
+            &:not(:focus) {
+                color: transparent;                
+            }
         }
     }
 
