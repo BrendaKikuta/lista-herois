@@ -1,0 +1,35 @@
+@import '../../../../shared/scss/globals';
+
+.pagination {
+    margin-bottom: 16px;
+    margin-top: 50px;
+    text-align: center;
+    
+    button {
+        font-family: 'Bebas Neue', cursive;
+        border: 1px solid $bunker;
+        background-color: $bunker;
+        color: $yellow;
+        padding: 10px 25px;
+        font-size: 18px;
+        border-radius: 3px;
+        cursor: pointer;
+    
+        &:hover {
+            transition: transform 0.3s ease;
+            background-color: $yellow;
+            border-color: $yellow;
+            color: $shark;
+        }
+    }
+}
+
+.no-more-results {
+    @include flex('column');
+    margin-top: 50px;
+    margin-bottom: 16px;
+
+    p {
+        font-size: 20px;
+    }
+}

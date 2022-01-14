@@ -1,10 +1,14 @@
-<div *ngIf="listOfHeroes.length > 0" class="list-heroes">
+<div *ngIf="listOfHeroes.length > 0; else noHeroes" class="list-heroes">
     <div *ngFor="let hero of listOfHeroes">
         <app-hero-card [hero]="hero"></app-hero-card>
     </div>
 </div>
 
-<div *ngIf="listOfHeroes.length <= 0" class="list-heroes-not-found text-center">
-    <h2>Nenhum personagem encontrado</h2>
-    <img src="../../../assets/images/groot.png" alt="Nenhum personagem encontrado">
-</div>
+<ng-template #noHeroes>
+    <div class="list-heroes-not-found text-center">
+        <h2>Nenhum personagem encontrado</h2>
+        <img src="../../../assets/images/groot.png" alt="Nenhum personagem encontrado">
+    </div>
+</ng-template>
+
+<app-pagination (click)="load()" [hasMore]="hasMore"></app-pagination>

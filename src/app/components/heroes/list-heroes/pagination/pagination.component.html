@@ -1,0 +1,10 @@
+<div class="pagination" *ngIf="hasMore; else noMore">
+    <button>Carregar mais personagens</button>
+</div>
+
+<ng-template #noMore>
+    <div class="no-more-results">
+        <p class="text-center text-muted">Sem mais personagens</p>
+        <img src="../../../../../assets/images/no-more.png" alt="Sem mais personagens">
+    </div>
+</ng-template>

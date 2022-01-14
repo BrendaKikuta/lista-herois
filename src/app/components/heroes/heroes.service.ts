@@ -1,5 +1,5 @@
 import { catchError, retry } from 'rxjs/operators';
-import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse, HttpHeaders, HttpParams } from '@angular/common/http';
 import { environment } from '../../../environments/environment';
 import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
@@ -22,8 +22,12 @@ export class HeroesService {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   };
 
-  getHeroes = (): Observable<any> => {
-    return this.httpClient.get(this.API_URL)
+  getHeroes = (page: number): Observable<any> => {
+    const params = new HttpParams()
+      .append('offset', page)
+      .append('limit', 10);
+
+    return this.httpClient.get(this.API_URL, {params: params})
       .pipe(
         retry(2),
         catchError(this.handleError)

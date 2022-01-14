@@ -3,16 +3,19 @@ import { NgModule } from '@angular/core';
 
 import { HeroCardComponent } from './hero-card/hero-card.component';
 import { ListHeroesComponent } from './list-heroes/list-heroes.component';
+import { PaginationComponent } from './list-heroes/pagination/pagination.component';
 
 
 @NgModule({
   declarations: [
     HeroCardComponent,
     ListHeroesComponent,
+    PaginationComponent
   ],
   exports: [
     HeroCardComponent,  
-    ListHeroesComponent
+    ListHeroesComponent,
+    PaginationComponent
   ],
   imports: [
     CommonModule

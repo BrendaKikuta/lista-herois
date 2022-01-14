@@ -10,20 +10,24 @@
             <span> {{ hero.name }} </span>
         </div>
         <div class="hero-card-content-series">
-            <ul *ngIf="hero.series.items.length > 0">
+            <ul *ngIf="hero.series.items.length > 0; else noteInfformedSerie">
                 <li *ngFor="let serie of hero.series.items.slice(0, 3)"> 
                     {{ serie.name ? serie.name : 'Não informado' }}
                 </li>
             </ul>
-            <span *ngIf="hero.series.items.length <= 0"> Não informado </span>
+            <ng-template #noteInfformedSerie>
+                <span> Não informado </span>
+            </ng-template>
         </div>
         <div class="hero-card-content-events">
-            <ul *ngIf="hero.events.items.length > 0">
+            <ul *ngIf="hero.events.items.length > 0; else notInformmedEvent">
                 <li *ngFor="let event of hero.events.items.slice(0, 3)"> 
                     {{ event.name }}
                 </li>
             </ul>
-            <span *ngIf="hero.events.items.length <= 0"> Não informado </span>
+            <ng-template #notInformmedEvent>
+                <span> Não informado </span>
+            </ng-template>
         </div>
     </div>
 </div>

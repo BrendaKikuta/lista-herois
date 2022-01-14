@@ -7,12 +7,13 @@ import { HeroesService } from "../heroes.service";
 
 export class ListHeroesResolver implements Resolve<Observable<any>>{
     listOfHeroes: any = [];
+    page: number = 1;
 
     constructor(
         private heroesService: HeroesService
     ) {}
 
     resolve(): Observable<any> {
-        return this.heroesService.getHeroes();
+        return this.heroesService.getHeroes(this.page);
     }
 }
