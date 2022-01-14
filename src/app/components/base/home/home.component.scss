@@ -38,13 +38,30 @@
                     text-transform: uppercase;
                 }
             }
+        }
+    }
 
-            &:placeholder-shown {
-                & + label {
-                    transform: translateY(-55px);
-                    color: $crimson;
-                    text-transform: uppercase;
+    @media (max-width: $screen-sm-size) {
+        padding: 0px 30px 16px;
+        .input-container {
+            input {
+                height: unset;
+                width: 100%;
+                margin-bottom: 12px;
+
+                &:focus {
+                    outline: none;
+                    border-bottom: 1px solid $crimson;
+    
+                    & + label {
+                        opacity: 0;
+                    }
                 }
+            }
+
+            label {
+                font-size: 12px;
+                transform: translateY(-6px);
             }
         }
     }

@@ -25,4 +25,24 @@ header {
         font-size: 2em;
         padding-left: 10px;
     }
+
+    @media (max-width: $screen-sm-size) {
+        padding: 12px 42px;
+        height: 20px;
+        margin-bottom: 12px;
+
+        .header-content {
+            a {
+                font-size: 16px;
+            }
+        }
+
+        p {
+            font-size: 16px;
+        }
+
+        .candidate {
+            display: none;
+        }
+    }
 }

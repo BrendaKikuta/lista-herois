@@ -10,4 +10,15 @@
     img {
         margin-bottom: 25px;
     }
+
+    @media (max-width: $screen-sm-size) {
+        h2 {
+            font-size: 20px;
+        }
+
+        img {
+            margin-bottom: 0px;
+            width: 280px;
+        }
+    }
 }
